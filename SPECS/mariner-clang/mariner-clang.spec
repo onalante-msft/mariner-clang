@@ -14,7 +14,7 @@ Package to test clang on Mariner 1.0
 cp "%{_sourcedir}/main.c" "%{_builddir}"
 
 %build
-clang main.c -o %{name}
+clang -v --debug=run main.c -o "%{name}"
 
 %install
 install -D "%{_builddir}/%{name}" -t "%{buildroot}%{_bindir}"
