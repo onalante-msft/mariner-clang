@@ -17,7 +17,7 @@ cp "%{_sourcedir}/main.c" "%{_builddir}"
 clang main.c -o %{name}
 
 %install
-cp %{name} %{_bindir}
+install -D "%{_builddir}/%{name}" -t "%{buildroot}%{_bindir}"
 
 %files
 %{_bindir}/%{name}

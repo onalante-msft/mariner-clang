@@ -1,10 +1,12 @@
 #! /bin/sh -eux
 
+VERSION="${1:-1}"
+
 MARINER_TMPDIR=$(mktemp -d)
 trap 'rm -rf "${MARINER_TMPDIR}"' EXIT
 
 git clone \
-  --branch 1.0-stable \
+  --branch "${VERSION}.0-stable" \
   --depth 1 \
   https://github.com/microsoft/CBL-mariner.git \
   "${MARINER_TMPDIR}"
